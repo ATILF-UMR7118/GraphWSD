@@ -1,14 +1,22 @@
 # Instruction to organize the data to run the models
 
-Create  ortolang/ and add dataset folder nountmp/ or verbtmp/. 
+## Folder Description
 
-Add the lf file ```15-lslf-rel_boost.csv``` in data/ folder.
-Or ask for it using email ```asinha@atilf.fr```
+* The `data/` folder contains a version of ORTOLANG  folder `verion_31iii21/` used for the experiments. It contains 2 folders: `BEL-RL-fr/` and `RL-fr/`.
+
+* The subdirectory `BEL-RL-fr/` contains AllSources_{nouns/verbs}.xml files.
+* The subdirectory `RL-fr/` contains 3 utility files : `01-lsnodes.csv`, `02-lsentries.csv` and `15-lslf-rel_boost.csv`
+
+## To run experiment with preprocessed files
+Use directly the files in `preprocessed_data/` folder which contains two zip folder `nountmp.zip` and `verbtmp.zip`. Unzpip the two folder, that you are ready to run the main scripts!
 
 
-## Preprocessing Pipeline
+
+## Preprocessing Pipeline for creating the files in `preprocessed_data/`
 
 ```
+mkdir preprocessed_data
+
 python scripts/utils.py --name ortolang --version 1 		
 						--save_dir ./data/preprocessed_data/ 
 						--home ~/GraphWSD/ 
@@ -16,10 +24,4 @@ python scripts/utils.py --name ortolang --version 1
 						--pos noun
 ```
 
-Files needed :
-
-Used version 31iii21
-
-- ```V2-ORTOLANG/XML-POS/``` folder
-- ```RL-fr/``` folder
-
+In case of any question, write to this email ```aman.sinha@atilf.fr```
